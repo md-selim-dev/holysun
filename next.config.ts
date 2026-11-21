@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
+    loader: 'custom',
+    loaderFile: './lib/image-loader.ts',
     remotePatterns: [
       {
         protocol: 'https',
@@ -18,28 +20,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-        ],
-      },
-    ];
-  },
-  output: 'standalone',
+  output: 'export',
   transpilePackages: ['motion'],
   webpack: (config, { dev }) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.

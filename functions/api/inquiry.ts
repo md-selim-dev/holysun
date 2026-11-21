@@ -1,5 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server';
-
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
 const WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS = 5;
@@ -42,31 +40,41 @@ function pruneRateLimitMap(now: number) {
   }
 }
 
-export async function POST(req: NextRequest) {
+function jsonResponse(payload: Record<string, unknown>, status = 200): Response {
+  return new Response(JSON.stringify(payload), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+    },
+  });
+}
+
+export async function onRequestPost(context: { request: Request }): Promise<Response> {
+  const req = context.request;
+
   try {
     const contentType = req.headers.get('content-type') || '';
     if (!contentType.includes('application/json')) {
-      return NextResponse.json(
-        { ok: false, errorBn: 'অবৈধ অনুরোধ ফরম্যাট।' },
-        { status: 415 }
-      );
+      return jsonResponse({ ok: false, errorBn: 'অবৈধ অনুরোধ ফরম্যাট।' }, 415);
     }
 
     const clientIp =
-      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous-client';
+      req.headers.get('cf-connecting-ip') ||
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      'anonymous-client';
     const now = Date.now();
     pruneRateLimitMap(now);
     const record = rateLimitMap.get(clientIp);
 
     if (record && now - record.timestamp < WINDOW_MS) {
       if (record.count >= MAX_REQUESTS) {
-        return NextResponse.json(
+        return jsonResponse(
           {
             ok: false,
             errorBn:
               'অতিরিক্ত অনুরোধ পাঠানো হয়েছে। অনুগ্রহ করে এক মিনিট অপেক্ষা করে আবার চেষ্টা করুন।',
           },
-          { status: 429 }
+          429
         );
       }
       record.count += 1;
@@ -74,11 +82,11 @@ export async function POST(req: NextRequest) {
       rateLimitMap.set(clientIp, { count: 1, timestamp: now });
     }
 
-    const body = await req.json();
+    const body = (await req.json()) as Record<string, unknown>;
 
     // Honeypot spam protection
     if (body.websiteUrl && String(body.websiteUrl).trim().length > 0) {
-      return NextResponse.json({
+      return jsonResponse({
         ok: true,
         referenceId: 'HS-FILTERED',
         messageBn: 'আপনার বার্তাটি গ্রহণ করা হয়েছে।',
@@ -100,43 +108,46 @@ export async function POST(req: NextRequest) {
     const message = sanitizeText(body.message, 2500);
 
     if (!fullName || fullName.length < 2) {
-      return NextResponse.json(
+      return jsonResponse(
         { ok: false, errorBn: 'অনুগ্রহ করে আপনার সম্পূর্ণ নাম লিখুন।' },
-        { status: 400 }
+        400
       );
     }
 
     const bdPhoneRegex = /^[0-9+\-\s()]{7,20}$/;
     if (!phone || !bdPhoneRegex.test(phone)) {
-      return NextResponse.json(
+      return jsonResponse(
         { ok: false, errorBn: 'অনুগ্রহ করে একটি সঠিক ফোন বা মোবাইল নম্বর প্রদান করুন।' },
-        { status: 400 }
+        400
       );
     }
 
     if (email) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        return NextResponse.json(
+        return jsonResponse(
           { ok: false, errorBn: 'অনুগ্রহ করে একটি সঠিক ইমেইল ঠিকানা প্রদান করুন।' },
-          { status: 400 }
+          400
         );
       }
     }
 
     if (!message || message.length < 10) {
-      return NextResponse.json(
+      return jsonResponse(
         {
           ok: false,
-          errorBn: 'অনুগ্রহ করে আপনার প্রস্তাবনা বা বার্তার সংক্ষিপ্ত বিবরণ লিখুন (কমপক্ষে ১০ অক্ষর)।',
+          errorBn:
+            'অনুগ্রহ করে আপনার প্রস্তাবনা বা বার্তার সংক্ষিপ্ত বিবরণ লিখুন (কমপক্ষে ১০ অক্ষর)।',
         },
-        { status: 400 }
+        400
       );
     }
 
-    const referenceId = `HS-${new Date().getFullYear()}-${Math.floor(100000 + Math.random() * 900000)}`;
+    const referenceId = `HS-${new Date().getFullYear()}-${Math.floor(
+      100000 + Math.random() * 900000
+    )}`;
 
-    return NextResponse.json({
+    return jsonResponse({
       ok: true,
       referenceId,
       submittedAt: new Date().toISOString(),
@@ -152,12 +163,12 @@ export async function POST(req: NextRequest) {
         'আপনার বার্তা ও প্রস্তাবনা সফলভাবে HOLYSUN OPC LIMITED-এর পর্যালোচনা তালিকায় সংরক্ষিত হয়েছে। প্রয়োজন অনুযায়ী আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবেন।',
     });
   } catch {
-    return NextResponse.json(
+    return jsonResponse(
       {
         ok: false,
         errorBn: 'ফর্ম জমা দেওয়ার সময় একটি কারিগরি ত্রুটি হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।',
       },
-      { status: 500 }
+      500
     );
   }
 }

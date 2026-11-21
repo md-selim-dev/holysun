@@ -14,6 +14,12 @@ import {
 import { INITIAL_VENTURES, COMPANY_INFO, GENERATED_ASSETS } from '@/lib/holysun-data';
 import { EditorialImage, HolysunEmblem } from '@/components/HolysunMedia';
 
+export function generateStaticParams() {
+  return INITIAL_VENTURES.map((venture) => ({
+    slug: venture.slug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {
