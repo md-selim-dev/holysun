@@ -15,7 +15,6 @@ import {
   ShieldCheck,
   Phone,
   MapPin,
-  FileText,
   Sparkles,
 } from 'lucide-react';
 import {
@@ -26,7 +25,6 @@ import {
   PARTICIPATION_ROLES,
   EDUCATION_SKILL_PILLARS,
   WELFARE_ACTIVITIES,
-  ASSET_REFERENCE_LIST,
   GENERATED_ASSETS,
   VentureItem,
 } from '@/lib/holysun-data';
@@ -58,7 +56,7 @@ export function HolysunCorporatePortal() {
   const [selectedVenture, setSelectedVenture] = useState<VentureItem | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubpage, setActiveSubpage] = useState<ActiveSubpage>('home');
-  const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | 'assets' | null>(
+  const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(
     null
   );
 
@@ -1286,16 +1284,6 @@ export function HolysunCorporatePortal() {
                     ব্যবহারের শর্তাবলি (Terms of Use)
                   </button>
                 </li>
-                <li>
-                  <button
-                    type="button"
-                    onClick={() => setLegalModalType('assets')}
-                    className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
-                  >
-                    <FileText className="h-3.5 w-3.5 text-[#FFC94A]" />
-                    <span>আলোকচিত্র ও অ্যাসেট রেফারেন্স তালিকা</span>
-                  </button>
-                </li>
               </ul>
             </div>
           </div>
@@ -1335,8 +1323,6 @@ export function HolysunCorporatePortal() {
               <h3 id="legal-modal-title" className="text-lg font-bold text-slate-900">
                 {legalModalType === 'privacy' && 'গোপনীয়তা নীতি (Privacy Policy)'}
                 {legalModalType === 'terms' && 'ব্যবহারের শর্তাবলি (Terms of Use)'}
-                {legalModalType === 'assets' &&
-                  'আলোকচিত্র ও অ্যাসেট রেফারেন্স তালিকা (Asset Reference List)'}
               </h3>
               <button
                 type="button"
@@ -1373,26 +1359,6 @@ export function HolysunCorporatePortal() {
                 <p>
                   ৩. ব্যবহৃত আলোকচিত্রসমূহ প্রতীকী (Representative / Conceptual Photography) এবং কোনো বিদ্যমান স্থাপনার মালিকানা দাবি করে না।
                 </p>
-              </div>
-            )}
-
-            {legalModalType === 'assets' && (
-              <div className="space-y-4">
-                <p className="text-xs leading-relaxed text-slate-600">
-                  ওয়েবসাইটে ব্যবহৃত সকল প্রতীকী আলোকচিত্র প্রজেক্টের নিজস্ব অ্যাসেট ফোল্ডারে সংরক্ষিত এবং বাংলায় Alt Text ও স্বচ্ছ লাইসেন্স নোটসহ ব্যবহৃত হয়েছে:
-                </p>
-                <div className="space-y-2.5">
-                  {ASSET_REFERENCE_LIST.map((asset) => (
-                    <div
-                      key={asset.id}
-                      className="rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-xs space-y-1"
-                    >
-                      <p className="font-bold text-slate-900">{asset.titleBn}</p>
-                      <p className="text-slate-600">ব্যবহার ক্ষেত্র: {asset.usageBn}</p>
-                      <p className="text-slate-500">{asset.licenseNote}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
             )}
 
