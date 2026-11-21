@@ -409,22 +409,35 @@ export default async function VentureDetailPage({
         </section>
       </main>
 
-      {/* Quiet Footer */}
-      <footer className="border-t border-slate-200 bg-slate-50 py-10">
+      {/* Quiet Corporate Dark Footer */}
+      <footer className="border-t border-slate-800 bg-slate-950 py-10 text-slate-300">
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <HolysunEmblem className="h-12 w-auto" variant="full" />
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="inline-flex items-center overflow-hidden rounded-2xl border border-slate-800 bg-[#05070B] shadow-md"
+              aria-label={COMPANY_INFO.name}
+            >
+              <HolysunEmblem className="h-12 sm:h-14 w-auto" variant="obsidian" />
+            </Link>
+            <div className="space-y-0.5">
+              <p className="text-sm font-bold text-white">{COMPANY_INFO.name}</p>
+              <p className="text-xs text-slate-400">{COMPANY_INFO.tagline}</p>
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400">
             <span className="inline-flex items-center gap-1.5">
-              <MapPin className="h-3.5 w-3.5 text-[#0284C7]" />
+              <MapPin className="h-3.5 w-3.5 text-[#39A9E8]" />
               {COMPANY_INFO.address}
             </span>
             <span aria-hidden="true">·</span>
-            <span className="inline-flex items-center gap-1.5 font-mono tabular-nums">
-              <Phone className="h-3.5 w-3.5 text-[#0284C7]" />
+            <a
+              href={`tel:${COMPANY_INFO.phone.replace(/[^0-9+]/g, '')}`}
+              className="inline-flex items-center gap-1.5 font-mono tabular-nums text-slate-300 hover:text-white transition-colors"
+            >
+              <Phone className="h-3.5 w-3.5 text-[#FFC94A]" />
               {COMPANY_INFO.phone}
-            </span>
+            </a>
           </div>
         </div>
       </footer>

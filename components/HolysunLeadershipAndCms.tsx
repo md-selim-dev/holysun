@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Network, Layers } from 'lucide-react';
 import { COMPANY_INFO } from '@/lib/holysun-data';
+import { HolysunEmblem } from './HolysunMedia';
 
 export function ChairmanMessageSection() {
   const writtenSummaryBn =
@@ -114,7 +115,8 @@ export function ExecutiveBodyIllustration() {
       <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-[#FFF4D6]/35 via-white to-[#EAF7FF]/40 p-6 sm:p-8">
         <div className="flex flex-col items-center text-center">
           {/* Top Node */}
-          <div className="rounded-xl border border-[#FFC94A] bg-white px-6 py-4 shadow-xs max-w-md w-full">
+          <div className="rounded-xl border border-[#FFC94A] bg-white px-6 py-5 shadow-xs max-w-md w-full flex flex-col items-center">
+            <HolysunEmblem className="mb-2.5 h-11 w-auto" variant="emblem" />
             <p className="text-xs font-semibold text-amber-700">কেন্দ্রীয় অভিভাবকত্ব ও দিকনির্দেশনা</p>
             <p className="mt-1 text-base font-bold text-slate-900">
               HOLYSUN OPC LIMITED — কেন্দ্রীয় পরিচালনা পর্ষদ

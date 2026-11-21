@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle, Phone, MapPin, ShieldCheck } from 'lucide-react';
 import { COMPANY_INFO, VentureItem } from '@/lib/holysun-data';
+import { HolysunEmblem } from './HolysunMedia';
 
 interface HolysunContactFormProps {
   ventures: VentureItem[];
@@ -178,10 +179,15 @@ export function HolysunContactForm({
       {/* Left column: Official Corporate Address & Direct Contact */}
       <div className="lg:col-span-5 space-y-6">
         <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-[#FFF4D6]/60 via-white to-[#EAF7FF]/60 p-6 sm:p-8 space-y-6">
-          <div>
-            <p className="text-xs font-semibold text-[#0284C7]">প্রধান কার্যালয় ও যোগাযোগ</p>
-            <h3 className="mt-1 text-xl font-bold text-slate-900">{COMPANY_INFO.name}</h3>
-            <p className="text-xs font-medium text-slate-600">{COMPANY_INFO.tagline}</p>
+          <div className="space-y-3">
+            <div className="inline-flex items-center overflow-hidden rounded-xl border border-slate-200/90 bg-white shadow-2xs">
+              <HolysunEmblem className="h-12 sm:h-14 w-auto" variant="daylight" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold text-[#0284C7]">প্রধান কার্যালয় ও যোগাযোগ</p>
+              <h3 className="mt-1 text-xl font-bold text-slate-900">{COMPANY_INFO.name}</h3>
+              <p className="text-xs font-medium text-slate-600">{COMPANY_INFO.tagline}</p>
+            </div>
           </div>
 
           <div className="space-y-4 border-t border-slate-200/80 pt-5">

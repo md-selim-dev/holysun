@@ -1113,8 +1113,8 @@ export function HolysunCorporatePortal() {
         }}
       >
         <div className="mx-auto max-w-5xl px-6 text-center space-y-6">
-          <div className="mx-auto inline-flex items-center justify-center rounded-2xl border border-[#FFC94A]/70 bg-white px-5 py-3 shadow-xs">
-            <HolysunEmblem className="h-14 sm:h-16 w-auto" variant="full" />
+          <div className="mx-auto inline-flex items-center justify-center overflow-hidden rounded-2xl border border-[#FFC94A]/80 bg-white shadow-sm">
+            <HolysunEmblem className="h-16 sm:h-20 w-auto" variant="daylight" />
           </div>
 
           <h2
@@ -1165,8 +1165,8 @@ export function HolysunCorporatePortal() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
             {/* Brand & Concept Statement */}
             <div className="md:col-span-5 space-y-4">
-              <div className="inline-flex items-center rounded-xl bg-white px-4 py-2.5 shadow-xs">
-                <HolysunEmblem className="h-12 w-auto" variant="full" />
+              <div className="inline-flex items-center overflow-hidden rounded-2xl border border-slate-800 bg-[#05070B] shadow-md">
+                <HolysunEmblem className="h-14 sm:h-16 w-auto" variant="obsidian" />
               </div>
 
               <p className="text-sm leading-relaxed text-slate-300 max-w-md">

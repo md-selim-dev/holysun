@@ -22,9 +22,9 @@ import {
 export const OFFICIAL_LOGOS = {
   emblemTransparent:
     '/assets/aistudio/holysun-opc-limited-v3-horizon-valley-daylight-cobalt-emblem-transparent-2048px_d97c517c.png',
-  fullVerticalTransparent:
-    '/assets/aistudio/holysun-opc-limited-v3-horizon-valley-daylight-cobalt-vertical-transparent-2048px_fb5cb845.png',
-  emblemDarkSvg:
+  emblemDaylightSvg:
+    '/assets/aistudio/holysun-opc-limited-v3-horizon-valley-daylight-cobalt-emblem_84013af1.svg',
+  emblemObsidianSvg:
     '/assets/aistudio/holysun-opc-limited-v3-horizon-valley-obsidian-electric-blue-emblem_8da36439.svg',
 };
 
@@ -33,21 +33,24 @@ export function HolysunEmblem({
   variant = 'emblem',
 }: {
   className?: string;
-  variant?: 'emblem' | 'full';
+  variant?: 'emblem' | 'daylight' | 'obsidian' | 'full';
 }) {
   const src =
-    variant === 'full'
-      ? OFFICIAL_LOGOS.fullVerticalTransparent
-      : OFFICIAL_LOGOS.emblemTransparent;
+    variant === 'obsidian'
+      ? OFFICIAL_LOGOS.emblemObsidianSvg
+      : variant === 'daylight' || variant === 'full'
+        ? OFFICIAL_LOGOS.emblemDaylightSvg
+        : OFFICIAL_LOGOS.emblemTransparent;
 
   return (
     <Image
       src={src}
       alt="HOLYSUN OPC LIMITED Official Logo"
-      width={variant === 'full' ? 320 : 220}
-      height={variant === 'full' ? 170 : 92}
+      width={760}
+      height={320}
       referrerPolicy="no-referrer"
-      className={`object-contain ${className}`}
+      style={{ aspectRatio: '760 / 320' }}
+      className={`block object-contain ${className}`}
       priority
     />
   );
