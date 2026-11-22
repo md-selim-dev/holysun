@@ -428,9 +428,8 @@ export function HolysunCorporatePortal() {
                 <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm flex flex-col justify-between">
                   <EditorialImage
                     src={GENERATED_ASSETS.heroEcosystem}
-                    alt="HOLYSUN OPC LIMITED মানবকেন্দ্রিক ব্যবসায়িক ও উদ্যোক্তা ইকোসিস্টেমের প্রতীকী আলোকচিত্র"
+                    alt="HOLYSUN OPC LIMITED মানবকেন্দ্রিক ব্যবসায়িক ও উদ্যোক্তা ইকোসিস্টেম"
                     aspectClass="aspect-[16/11] lg:h-full"
-                    captionNote="প্রতীকী আলোকচিত্র • মানুষ, উদ্যোগ ও সম্মিলিত সম্ভাবনার পরিবেশ"
                   />
                   <div className="border-t border-slate-100 bg-gradient-to-r from-[#FFF4D6]/60 via-white to-[#EAF7FF]/60 px-5 py-3.5 flex items-center justify-between gap-4">
                     <p className="text-xs font-medium text-slate-800">
@@ -704,7 +703,6 @@ export function HolysunCorporatePortal() {
                       alt={venture.imageAltBn}
                       ventureSlug={venture.slug}
                       aspectClass="aspect-[4/3]"
-                      captionNote={venture.imageCreditNote}
                     />
                   </div>
 
@@ -1023,10 +1021,9 @@ export function HolysunCorporatePortal() {
                 <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
                   <EditorialImage
                     src={GENERATED_ASSETS.agroGreen}
-                    alt="মানবকল্যাণ ও সামাজিক উন্নয়নের প্রতীকী আলোকচিত্র"
+                    alt="মানবকল্যাণ ও সামাজিক উন্নয়ন"
                     ventureSlug="holysun-trust-welfare-foundation"
                     aspectClass="aspect-[16/9]"
-                    captionNote="প্রতীকী আলোকচিত্র • মানবিক সহমর্মিতা ও সামাজিক উন্নয়ন পরিকল্পনা"
                   />
                 </div>
               </div>
@@ -1355,9 +1352,6 @@ export function HolysunCorporatePortal() {
                 </p>
                 <p>
                   ২. ওয়েবসাইটে কোনো নিশ্চিত বিনিয়োগ মুনাফা, কাল্পনিক পরিসংখ্যান বা অনলাইন পেমেন্ট দাবি করা হয়নি। প্রতিটি উদ্যোগের বাস্তবায়ন ও সদস্য সুবিধা প্রতিষ্ঠানের অনুমোদিত নীতিমালা ও প্রযোজ্য শর্তাবলি অনুযায়ী পরিচালিত হবে।
-                </p>
-                <p>
-                  ৩. ব্যবহৃত আলোকচিত্রসমূহ প্রতীকী (Representative / Conceptual Photography) এবং কোনো বিদ্যমান স্থাপনার মালিকানা দাবি করে না।
                 </p>
               </div>
             )}

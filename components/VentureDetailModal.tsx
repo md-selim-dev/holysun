@@ -72,7 +72,6 @@ export function VentureDetailModal({
                 alt={venture.imageAltBn}
                 ventureSlug={venture.slug}
                 aspectClass="aspect-[4/3]"
-                captionNote={venture.imageCreditNote}
               />
             </div>
 
@@ -138,7 +137,7 @@ export function VentureDetailModal({
 
           {/* Accuracy & Transparency Notice */}
           <div className="rounded-xl border border-slate-200 bg-white p-4 text-xs leading-relaxed text-slate-600">
-            <strong className="font-semibold text-slate-800">তথ্যগত স্বচ্ছতা নোট:</strong> এই উদ্যোগটি বর্তমানে HOLYSUN OPC LIMITED-এর পরিকল্পিত ইকোসিস্টেমের অংশ হিসেবে উপস্থাপিত। প্রদর্শিত ছবিগুলো প্রতীকী (Representative Photography)। পর্যায়ক্রমে অনুমোদিত কর্মপরিকল্পনা অনুযায়ী কার্যক্রম বাস্তবায়িত হবে।
+            <strong className="font-semibold text-slate-800">তথ্যগত স্বচ্ছতা নোট:</strong> এই উদ্যোগটি বর্তমানে HOLYSUN OPC LIMITED-এর পরিকল্পিত ইকোসিস্টেমের অংশ হিসেবে উপস্থাপিত। পর্যায়ক্রমে অনুমোদিত কর্মপরিকল্পনা অনুযায়ী কার্যক্রম বাস্তবায়িত হবে।
           </div>
         </div>
 

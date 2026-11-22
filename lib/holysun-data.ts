@@ -96,7 +96,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • ধারণা ও কাঠামো উন্নয়ন পর্যায়',
     imageUrl: GENERATED_ASSETS.commerceLogistics,
     imageAltBn: 'Holysun E-Mart পরিকল্পিত রিটেইল ও উদ্যোক্তা সহযোগিতা প্ল্যাটফর্মের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sunshine',
   },
   {
@@ -126,7 +126,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • সম্ভাব্যতা ও পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.agroGreen,
     imageAltBn: 'Holysun Agro & Industries আধুনিক কৃষি ও সবুজ মাঠের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'green',
   },
   {
@@ -156,7 +156,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • কাঠামো বিন্যাস পর্যায়',
     imageUrl: GENERATED_ASSETS.heroEcosystem,
     imageAltBn: 'Holysun Consultancy Firm পেশাদার পরামর্শ ও সভার প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sky',
   },
   {
@@ -186,7 +186,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • নীতিমালা ও রূপরেখা প্রণয়ন পর্যায়',
     imageUrl: GENERATED_ASSETS.healthcareFamily,
     imageAltBn: 'Holysun Family Care Hospital পারিবারিক স্বাস্থ্যসেবার প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sky',
   },
   {
@@ -216,7 +216,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • মানবিক কার্যক্রম রূপরেখা পর্যায়',
     imageUrl: GENERATED_ASSETS.agroGreen,
     imageAltBn: 'Holysun Trust & Welfare Foundation মানবিক ও সামাজিক উন্নয়নের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sunshine',
   },
   {
@@ -246,7 +246,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • মিডিয়া ও কনটেন্ট পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.educationTraining,
     imageAltBn: 'Holysun TV মিডিয়া প্রোডাকশন ও সম্প্রচারের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'navy',
   },
   {
@@ -276,7 +276,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • কনসেপ্ট ও সাপ্লাই চেইন পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.commerceLogistics,
     imageAltBn: 'Holysun Cafe & Halal Bazar আধুনিক ফুড ও রিটেইল উদ্যোগের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sunshine',
   },
   {
@@ -306,7 +306,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • একাডেমিক রূপরেখা প্রণয়ন পর্যায়',
     imageUrl: GENERATED_ASSETS.educationTraining,
     imageAltBn: 'Holysun School & College আধুনিক শিক্ষা পরিবেশের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sky',
   },
   {
@@ -336,7 +336,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • প্রাথমিক পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.commerceLogistics,
     imageAltBn: 'Holysun Housing & Builders আধুনিক স্থাপত্য ও আবাসনের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'navy',
   },
   {
@@ -366,7 +366,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • বাণিজ্যিক নেটওয়ার্ক পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.commerceLogistics,
     imageAltBn: 'Holysun Export and Import আন্তর্জাতিক বাণিজ্য ও লজিস্টিকসের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sky',
   },
   {
@@ -396,7 +396,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • বহুমুখী পর্যটন প্রকল্প পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.agroGreen,
     imageAltBn: 'Holysun Tourism প্রাকৃতিক সৌন্দর্য ও পর্যটন উদ্যোগের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'green',
   },
   {
@@ -426,7 +426,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • কারিকুলাম ও প্রশিক্ষণ কাঠামো পর্যায়',
     imageUrl: GENERATED_ASSETS.educationTraining,
     imageAltBn: 'Holysun Technical Training Institute হাতে-কলমে কারিগরি প্রশিক্ষণের প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sunshine',
   },
   {
@@ -456,7 +456,7 @@ export const INITIAL_VENTURES: VentureItem[] = [
     statusLabelBn: 'পরিকল্পিত উদ্যোগ • ডিজিটাল সার্ভিস ও একাডেমি পরিকল্পনা পর্যায়',
     imageUrl: GENERATED_ASSETS.educationTraining,
     imageAltBn: 'Holysun IT & Digital Solutions সফটওয়্যার ডেভেলপমেন্ট ও প্রযুক্তির প্রতীকী ছবি',
-    imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+    imageCreditNote: '',
     accentTone: 'sky',
   },
 ];

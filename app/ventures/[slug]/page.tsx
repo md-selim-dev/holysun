@@ -106,8 +106,8 @@ export default async function VentureDetailPage({
           ],
           statusLabelBn: 'পরিকল্পিত উদ্যোগ • ভবিষ্যৎ সম্প্রসারণ তালিকা',
           imageUrl: GENERATED_ASSETS.heroEcosystem,
-          imageAltBn: 'পরিকল্পিত নতুন উদ্যোগের প্রতীকী ছবি',
-          imageCreditNote: 'প্রতীকী আলোকচিত্র (Representative Editorial Visual)',
+          imageAltBn: 'পরিকল্পিত নতুন উদ্যোগ',
+          imageCreditNote: '',
           accentTone: 'sunshine' as const,
         };
 
@@ -267,7 +267,6 @@ export default async function VentureDetailPage({
                   alt={venture.imageAltBn}
                   ventureSlug={venture.slug}
                   aspectClass="aspect-[4/3]"
-                  captionNote={venture.imageCreditNote}
                 />
               </div>
             </div>
@@ -350,7 +349,7 @@ export default async function VentureDetailPage({
             গুরুত্বপূর্ণ তথ্য ও স্বচ্ছতা নীতিমালা
           </h3>
           <p className="mt-1.5 text-xs sm:text-sm leading-relaxed text-slate-600">
-            HOLYSUN OPC LIMITED-এর অধীনে চিহ্নিত উদ্যোগসমূহ বর্তমানে পরিকল্পিত ও পর্যায়ক্রমিক উন্নয়ন প্রক্রিয়ায় রয়েছে। এই পাতায় ব্যবহৃত আলোকচিত্রগুলো প্রতীকী (Representative / Conceptual Photography) এবং কোনো বিদ্যমান ভবন বা চালু প্রতিষ্ঠানের মালিকানা দাবি করে না। অনুমোদিত নীতিমালা ও বাস্তবায়ন ধাপ অনুযায়ী প্রতিটি উদ্যোগের আনুষ্ঠানিক কার্যক্রম ঘোষণা করা হবে।
+            HOLYSUN OPC LIMITED-এর অধীনে চিহ্নিত উদ্যোগসমূহ বর্তমানে পরিকল্পিত ও পর্যায়ক্রমিক উন্নয়ন প্রক্রিয়ায় রয়েছে। অনুমোদিত নীতিমালা ও বাস্তবায়ন ধাপ অনুযায়ী প্রতিটি উদ্যোগের আনুষ্ঠানিক কার্যক্রম ঘোষণা করা হবে।
           </p>
         </div>
 

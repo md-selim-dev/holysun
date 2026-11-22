@@ -109,7 +109,6 @@ export function EditorialImage({
   alt,
   ventureSlug = '',
   aspectClass = 'aspect-[4/3]',
-  captionNote = 'প্রতীকী আলোকচিত্র • পরিকল্পিত উদ্যোগ',
   priorityOverlay = false,
 }: EditorialImageProps) {
   const [hasError, setHasError] = useState(false);
@@ -134,18 +133,11 @@ export function EditorialImage({
             <VentureIcon slug={ventureSlug} className="h-6 w-6" />
           </div>
           <p className="text-sm font-semibold text-slate-800">{alt}</p>
-          <p className="mt-1 text-xs text-slate-500">{captionNote}</p>
         </div>
       )}
 
       {priorityOverlay && (
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/15 to-transparent" />
-      )}
-
-      {captionNote && (
-        <div className="pointer-events-none absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/75 via-slate-950/35 to-transparent px-4 pt-6 pb-2.5">
-          <p className="text-[11px] font-medium tracking-normal text-white/90">{captionNote}</p>
-        </div>
       )}
     </div>
   );
